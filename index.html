@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+<h2>Phonebook</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for phone numbers" title="Type in a contact">
+
+<ul id="myUL">
+</ul>
+
+<script>
+    function myFunction() {
+    const options = {
+      // isCaseSensitive: false,
+      // includeScore: false,
+      // shouldSort: true,
+      // includeMatches: false,
+      // findAllMatches: false,
+      // minMatchCharLength: 1,
+      // location: 0,
+      // threshold: 0.6,
+      // distance: 100,
+      // useExtendedSearch: false,
+      // ignoreLocation: false,
+      // ignoreFieldNorm: false,
+      keys: [
+        "name",
+        "number"
+      ]
+    };
+
+    var numbers = [
+            {name:"OR Control", number:"65150"},
+            {name:"SICU", number:"59930"}, 
+            {name:"Deborah Dickens - ENT Coordinator", number:"28382"},
+            {name:"Feinberg OR 1", number:"65024"},
+            {name:"Feinberg OR 2", number:"66394"},
+            {name:"Feinberg OR 3", number:"64179"},
+            {name:"Feinberg OR 4", number:"64229"},
+            {name:"Feinberg OR 5", number:"64239"},
+            {name:"Feinberg OR 6", number:"60526"},
+            {name:"Feinberg OR 7", number:"61779"},
+            {name:"Feinberg OR 8", number:"61889"},
+            {name:"Feinberg OR 9", number:"62209"},
+            {name:"Feinberg OR 10", number:"60218"},
+            {name:"Feinberg OR 11", number:"63819"},
+            {name:"Feinberg OR 12", number:"62124"},
+            {name:"Feinberg OR 14", number:"63726"},
+            {name:"Feinberg OR 15", number:"61588"},
+            {name:"Feinberg OR 16", number:"63930"},
+            {name:"Feinberg OR 17", number:"61732"},
+            {name:"Feinberg OR 18", number:"67265"},
+            {name:"Feinberg OR 19", number:"67266"},
+            {name:"Feinberg OR 20", number:"67267"},
+            {name:"Feinberg OR 21", number:"67268"},
+            {name:"Feinberg OR 22", number:"67321"},
+            {name:"Feinberg OR 23", number:"67323"},
+            {name:"Feinberg OR 24", number:"64930"},
+            {name:"Feinberg OR 25", number:"64931"},
+            {name:"Feinberg OR 26", number:"64998"},
+            {name:"Feinberg OR 27", number:"64991"},
+            {name:"Feinberg OR 30", number:"60891"},
+            {name:"Feinberg OR 31", number:"60894"},
+            {name:"Feinberg OR 32", number:"63555"},
+            {name:"Feinberg OR 33", number:"63660"},
+            {name:"Feinberg OR 34", number:"64155"},
+            {name:"Feinberg OR 35", number:"64261"},
+            {name:"Feinberg OR 36", number:"67586"},
+            {name:"Feinberg Proedure Room 2", number:"68237"},
+            {name:"Lavin OR 1", number:"25801"},
+            {name:"Lavin OR 2", number:"25802"},
+            {name:"Lavin OR 3", number:"25803"},
+            {name:"Lavin OR 4", number:"25804"},
+            {name:"Lavin OR 5", number:"25805"},
+            {name:"Lavin OR 6", number:"25806"},
+            {name:"Lavin OR 7", number:"25807"},
+            {name:"Lavin OR 8", number:"25808"},
+            {name:"Admitting", number:"62074"},
+            {name:"Equipment", number:"28388"},
+            {name:"OR Anesthesia", number:"69036"},
+            {name:"Rhinology Clinic", number:"50344"},
+            {name:"Rhinology Clinic", number:"50366"},
+            {name:"Rhinology Clinic", number:"50412"},
+            {name:"Audio - Angela", number:"54923"},
+            {name:"CTICU", number:"65123"},
+            {name:"CCU", number:"65172"},
+            {name:"SICU", number:"65186"},
+            {name:"SICU Resident Room", number:"60324"},
+            {name:"SICU Charge", number:"65186"},
+            {name:"Same-Day Surgery", number:"65450"},
+            {name:"ENT Resident Room - 12E Feinberg", number:"64646"},
+            {name:"PTC", number:"63321"},
+            {name:"ENT CT Reading Room", number:"62042"},
+            {name:"External Transfer", number:"63321"},
+            {name:"12E Feinberg Nursing Station", number:"62886"},
+            {name:"12W Feinberg Nursing Station", number:"66538"},
+            {name:"13E Feinberg Nursing Station", number:"62356"},
+            {name:"ENT Clinic", number:"51590"},
+            {name:"ENT Clinic", number:"54035"},
+            {name:"ENT Clinic", number:"51590"},
+        ];
+
+    const fuse = new Fuse(
+        numbers, options);
+
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput").value;
+    ul = document.getElementById("myUL");
+    ul.innerHTML = "";
+    console.log(input);
+    var result = fuse.search(input);
+
+    for(var i = 0; i < result.length; i++){
+        var number = result[i].item.number;
+        var phone = number;
+        switch(phone.charAt(0)){
+            case "6":
+                phone = "+131292" + phone;
+                break;
+            case "4":
+                phone = "31247" + phone;
+                break
+            default:
+                phone = "31269" + phone;
+        }
+
+        var li = document.createElement("li");
+        li.innerHTML = '<a href="tel:' + phone + '">' + result[i].item.name + " - " + result[i].item.number + '</a>';
+        ul.appendChild(li);
+    }
+}
+</script>
+
+</body>
+</html>
