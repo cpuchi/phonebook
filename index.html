@@ -217,7 +217,7 @@
       var num = input.replace("-","");
       if (num.length === 5 && parseInt(num) % 10000 >= 1) {
         var li = document.createElement("li");
-        li.innerHTML = '<a href="tel:' + num + '">' + result[i].item.name + " - " + result[i].item.number + '</a>';
+        li.innerHTML = '<a href="tel:' + num + '">' + input '</a>';
         ul.appendChild(li);
       }
     }
