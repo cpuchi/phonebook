@@ -210,27 +210,31 @@
     input = document.getElementById("myInput").value;
     ul = document.getElementById("myUL");
     ul.innerHTML = "";
-    console.log(input);
     var result = fuse.search(input);
+
+    var num = input.replace("-","");
+    if (num.length === 5 && parseInt(num) % 10000 >= 1) {
+      var li = document.createElement("li");
+      li.innerHTML = '<a href="tel:' + makePhone(num) + '"> Dial phone #' + input + '</a>';
+      ul.appendChild(li);
+    }
 
     for(var i = 0; i < result.length; i++){
         var number = result[i].item.number;
-        var phone = number;
-        switch(phone.charAt(0)){
-            case "6":
-                phone = "+131292" + phone;
-                break;
-            case "2":
-                phone = "+131247" + phone;
-                break
-            default:
-                phone = "+131269" + phone;
-        }
-
         var li = document.createElement("li");
-        li.innerHTML = '<a href="tel:' + phone + '">' + result[i].item.name + " - " + result[i].item.number + '</a>';
+        li.innerHTML = '<a href="tel:' + makePhone(number) + '">' + result[i].item.name + " - " + result[i].item.number + '</a>';
         ul.appendChild(li);
     }
+}
+
+function makePhone(input){
+    switch(input.charAt(0)){
+            case "6":
+                return "+131292" + input;
+            case "2":
+                return "+131247" + input;
+            return "+131269" + input;
+        }
 }
 </script>
 
