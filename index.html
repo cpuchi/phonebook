@@ -213,15 +213,13 @@
     console.log(input);
     var result = fuse.search(input);
     
-    if (result.length === 0){
-      var num = input.replace("-","");
-      if (num.length === 5 && parseInt(num) % 10000 >= 1) {
-        var li = document.createElement("li");
-        li.innerHTML = '<a href="tel:' + num + '">' + input '</a>';
-        ul.appendChild(li);
-      }
+    var num = input.replace("-","");
+    if (num.length === 5 && parseInt(num) % 10000 >= 1) {
+      var li = document.createElement("li");
+      li.innerHTML = '<a href="tel:' + num + '"> Dial' + input '</a>';
+      ul.appendChild(li);
     }
-      
+
     for(var i = 0; i < result.length; i++){
         var number = result[i].item.number;
         var phone = number;
