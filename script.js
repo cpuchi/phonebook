@@ -36,7 +36,6 @@ $(document).ready(function(){
     } else {
       contactContainer.html("");
       var result = fuse.search(input);
-      console.log(result);
       var contacts = contactContainer.append('<div class="contactlist"/>');
       for (var i = 0; i < result.length; i++){
         addAnimation(contacts.append(`<a href="tel:${makePhone(result[i].item.number)}" class="contactlink"><div class="contact">${result[i].item.name} - ${result[i].item.number}</div></a>`));
@@ -60,7 +59,6 @@ $(document).ready(function(){
     $('#dialer').show();
     $(this).css('color', "#1976d2");
     $("#contacts").css('color', "black")
-     console.log(data);
   });
 
   $('#contacts').on("click", function () {
@@ -85,7 +83,6 @@ $(document).ready(function(){
       })
       .attr("href", "tel:" + makePhone(dial));
 
-      console.log(dial);
       for (var i = 0; i < data.length; i++){
         if (data[i].number === dial){
           $("#match").html(data[i].name);
