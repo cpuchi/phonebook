@@ -1,0 +1,178 @@
+body {
+  background-color: #42a5f5;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-touch-callout: none !important;
+  font-family: "Exo";
+}
+
+ @viewport {  
+   orientation: portrait;  
+ }  
+
+#dialer {
+  touch-action: manipulation;
+}
+
+.alphabetizer {
+  color: white;
+}
+
+.row {
+  margin: 0 auto;
+  width: 280px;
+  clear: both;
+  text-align: center;
+}
+
+#match {
+  height: 21px;
+}
+
+.digit,
+.blank {
+  float: left;
+  padding: 10px 30px;
+  width: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.dig {
+  float: left;
+  padding: 10px 20px;
+  margin: 10px;
+  width: 30px;
+  cursor: pointer;
+}
+
+#backspace {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.sub {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.container {
+  background-color: white;
+  width: 320px;
+  padding: 20px;
+  margin: 30px auto;
+  height: 420px;
+  text-align: center;
+}
+
+#phonebook {
+  height: auto;
+}
+
+#phone {
+  .color: #1976d2;
+}
+
+#output {
+  font-size: 2rem;
+  height: 60px;
+  font-weight: bolder;
+}
+
+.alphabetizer {
+  text-align: left;
+  background-color: #1976d2;
+  padding-left: 5px;
+  font-weight: bolder;
+  margin-top: 5px;
+}
+
+.contact {
+  text-align: left;
+  box-shadow: rgba(149 157 165 / 20%) 3px 3px 4px 2px;
+  padding-left: 5px;
+  padding-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 57px;
+}
+
+#call {
+  display: inline-block;
+  background-color: #e6e6e6;
+  padding: 4px 30px;
+  margin: 10px;
+  color: white;
+  border-radius: 4px;
+  float: left;
+  cursor: pointer;
+}
+
+.botrow {
+  margin: 0 auto;
+  width: 280px;
+  clear: both;
+  text-align: center;
+  font-family: "Exo";
+}
+
+#nav {
+  position:fixed;
+  bottom:0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  text-align: center
+  min-width: 320px;
+  width: 100%;
+}
+
+.bot {
+  font-size: 2rem;
+  /*color: #1976d2; slightly darker than background*/ 
+}
+
+.contactlink {
+  text-decoration: none;
+  color: inherit;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+
+  /* Remove default */
+  -webkit-appearance: none;
+
+  /* Now your own custom styles */
+   height: 14px;
+   width: 14px;
+   display: block;
+   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
+  /* setup all the background tweaks for our custom icon */
+  background-repeat: no-repeat;
+
+  /* icon size */
+  background-size: 14px;
+}
+
+#returntop {
+  color: black;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: none;
+  text-decoration: none;
+}
+
+#searchbar {
+  font-family: "Exo";
+  font-size: 16px;
+  width: 100%;
+}
+#search {
+  display: flow-root;
+  width: 100%;
+}
