@@ -56,7 +56,7 @@ var data = [
     {name:"CCU", number:"65172"},
     {name:"SICU", number:"65186"},
     {name:"MICU Northeast", number:"60618"},
-    {name:"MICU Southeast", number:"65140"},
+    {name:"MICU Nursing Station", number:"65140"},
     {name:"MICU Northwest", number:"60611"},
     {name:"MICU Southwest", number:"65169"},
     {name:"Tania Coyoo", number:"23800"},
@@ -128,4 +128,13 @@ var data = [
     {name:"Lavin 11 OR", number:"25776"},
     {name:"SROU", number:"60383"},
     {name:"Lavin 11 Charge", number:"25044"},
+    {name:"Inpatient Preop", number:"68873"},
+    {name:"Inpatient Transport", number:"62170"},
+    {name:"Chest Reading Room", number:"25299"},
+    {name:"Liz Stanton", number:"50412"},
+    {name:"Galter 12 Nursing Station", number:"62350"},
+    {name:"Galter 11 Nursing Station", number:"42700"},
+    {name:"Prentice 6 PACU", number:"20610"},
+    {name:"Lavin Preop", number:"25044"},
+    {name:"ENT OR Scheduling", number:"55585"}
 ];
