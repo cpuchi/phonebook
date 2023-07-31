@@ -136,5 +136,7 @@ var data = [
     {name:"Galter 11 Nursing Station", number:"42700"},
     {name:"Prentice 6 PACU", number:"20610"},
     {name:"Lavin Preop", number:"25044"},
-    {name:"ENT OR Scheduling", number:"55585"}
+    {name:"ENT OR Scheduling", number:"55585"},
+    {name:"Pathology", number:"63211"},
+    {name:"Kailani", number:"68805"}
 ];
