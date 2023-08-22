@@ -138,5 +138,8 @@ var data = [
     {name:"Lavin Preop", number:"25044"},
     {name:"ENT OR Scheduling", number:"55585"},
     {name:"Pathology", number:"63211"},
-    {name:"Kailani", number:"68805"}
+    {name:"Kailani", number:"68805"},
+    {name:"SICU Charge", number:"62809"},
+    {name:"ENT Reading Room", number:"62042"},
+    {name:"CT", number:"65314"}
 ];
