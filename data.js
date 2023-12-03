@@ -141,5 +141,6 @@ var data = [
     {name:"Kailani", number:"68805"},
     {name:"SICU Charge", number:"62809"},
     {name:"ENT Reading Room", number:"62042"},
-    {name:"CT", number:"65314"}
+    {name:"CT", number:"65314"},
+    {name:"NSICU", number:"60661"}
 ];
